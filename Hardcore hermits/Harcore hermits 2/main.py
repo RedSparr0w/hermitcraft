@@ -25,9 +25,8 @@ y = np.transpose(lines[1:aliveLine])
 x = np.transpose([i for i in np.arange(1, aliveLine)])
 alive = np.transpose(lines[aliveLine:])*10
 
-for i in range(len(y)):
-    plt.plot(x, y[i], label=labels)
-    plt.scatter(x, y[i], s=alive[i])
+
+
 
 plt.title(title, size=16)
 plt.xlabel('Episode')
@@ -35,6 +34,11 @@ plt.ylabel('Points')
 plt.xlim(0, aliveLine)
 plt.ylim(0, 10*math.ceil(np.max(y)*0.11))
 plt.xticks(np.arange(0, aliveLine + 1, 1))
+plt.grid(linestyle=':')
+for i in range(len(y)):
+    plt.plot(x, y[i], label=labels)
+    plt.scatter(x, y[i], s=alive[i])
+
 plt.legend(labels)
 plt.savefig("Result.png")
 
