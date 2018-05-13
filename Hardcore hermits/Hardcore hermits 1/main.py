@@ -21,9 +21,9 @@ with open('input.txt', 'r') as inFile:
 print(lines)
 
 labels = lines[0]
-y = np.transpose(lines[1:aliveLine])
-x = np.transpose([i for i in np.arange(1, aliveLine)])
-alive = np.transpose(lines[aliveLine:])*10
+y = np.transpose([[0 for _ in range(len(lines[1]))]] + lines[1:aliveLine])
+x = np.transpose([i for i in np.arange(0, aliveLine)])
+alive = (np.transpose([lines[aliveLine]] + lines[aliveLine:]))*20
 
 
 
@@ -31,9 +31,9 @@ alive = np.transpose(lines[aliveLine:])*10
 plt.title(title, size=16)
 plt.xlabel('Episode')
 plt.ylabel('Points')
-plt.xlim(0, aliveLine)
+plt.xlim(0, aliveLine-1)
 plt.ylim(0, 10*math.ceil(np.max(y)*0.11))
-plt.xticks(np.arange(0, aliveLine + 1, 1))
+plt.xticks(np.arange(0, aliveLine, 1))
 plt.grid(linestyle=':')
 for i in range(len(y)):
     plt.plot(x, y[i], label=labels)
