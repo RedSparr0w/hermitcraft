@@ -1,5 +1,7 @@
 Harcore hermits 2
 GFX	ZIT	PJZ	Dodgy Jumper	Two-and-a-Half Men
 62	33	44	55	58
+140	33	134	131	157
 ###alive
+3	3	3	3	3
 3	3	3	3	3
